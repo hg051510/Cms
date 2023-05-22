@@ -1,0 +1,44 @@
+### 회원가입 (고객)
+POST http://localhost:8081/signup/customer
+Content-Type: application/json
+
+{
+  "birth": "1998-09-29",
+  "email": "hg051510@naver.com",
+  "name": "김두현",
+  "password": "1234",
+  "phone": "01064008169"
+}
+### 이메일 인증 (고객)
+GET http://localhost:8081/signup/customer/verify/?email=hg051510@naver.com&code=D94ISTJWYd
+
+### 로그인 (고객)
+POST http://localhost:8081/signin/customer
+Content-Type: application/json
+
+{
+  "email": "hg051510@naver.com",
+  "password": "1234"
+}
+
+### 회원 정보 조회 (고객)
+GET http://localhost:8081/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtQ21WcnVKM0VUYzhWTE1iVFNVMm4zSy9tdHVJeGxPb2Vzcm5nY2J0MlhNPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODQ3NDc1MDksImV4cCI6MTY4NDgzMzkwOX0.ZOCoSaPyQ7lnu5Sg8qrkx9VYgDkRg-YeGx_pmX-S5w4
+
+### 잔액 변경 (고객)
+POST http://localhost:8081/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtQ21WcnVKM0VUYzhWTE1iVFNVMm4zSy9tdHVJeGxPb2Vzcm5nY2J0MlhNPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2ODQ3NDc1MDksImV4cCI6MTY4NDgzMzkwOX0.ZOCoSaPyQ7lnu5Sg8qrkx9VYgDkRg-YeGx_pmX-S5w4
+
+{
+  "from": "Server",
+  "message": "돈 충전",
+  "money": 50000
+}
+
+#########################
+
+### 회원가입 (셀러)
+
+### 로그인 (셀러)
