@@ -1,7 +1,7 @@
 ### 상품 추가
 POST http://localhost:8082/seller/product
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtQ21WcnVKM0VUYzhWTE1iVFNVMm4zSy9tdHVJeGxPb2Vzcm5nY2J0MlhNPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg1MjU4MjQ1LCJleHAiOjE2ODU4NjMwNDV9.V9mrL1EUy9m_EVjfT7bg2nBDLPIItKqWRg97AbxpKpE
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtQ21WcnVKM0VUYzhWTE1iVFNVMm4zSy9tdHVJeGxPb2Vzcm5nY2J0MlhNPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg1MjczODAzLCJleHAiOjE2ODU4Nzg2MDN9.m5qkylJGUq4Uvd07U1TzK4owFZ1KeyIN2aIFQgX2UKQ
 
 {
   "description": "상품 설명",
@@ -59,26 +59,12 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtQ21WcnVKM0VUYzhWTE1iVFNVMm4zSy9td
 }
 
 ### 상품 삭제
-DELETE http://localhost:8082/seller/product?id=1
+DELETE http://localhost:8082/seller/product?id=3
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtQ21WcnVKM0VUYzhWTE1iVFNVMm4zSy9tdHVJeGxPb2Vzcm5nY2J0MlhNPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg1MjU4MjQ1LCJleHAiOjE2ODU4NjMwNDV9.V9mrL1EUy9m_EVjfT7bg2nBDLPIItKqWRg97AbxpKpE
 
-{
-  "description": "상품 설명",
-  "items": [
-    {
-      "id": 1,
-      "count": 1,
-      "name": "270",
-      "price": 100000
-    }
-  ],
-  "id": 1,
-  "name": "나이키 에어포스 한정판"
-}
-
 ### 상품 아이템 삭제
-DELETE http://localhost:8082/seller/product/item?id=2
+DELETE http://localhost:8082/seller/product/item?id=1
 Content-Type: application/json
 
 ### 상품 검색
@@ -89,3 +75,22 @@ Content-Type: application/json
 GET http://localhost:8082/search/product/detail?productId=1
 Content-Type: application/json
 
+### 카트 추가
+POST http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtQ21WcnVKM0VUYzhWTE1iVFNVMm4zSy9tdHVJeGxPb2Vzcm5nY2J0MlhNPSIsImp0aSI6IlN1YkhlS1VSUnJlUVkrV1NPbkJrdGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjg1MjczODAzLCJleHAiOjE2ODU4Nzg2MDN9.m5qkylJGUq4Uvd07U1TzK4owFZ1KeyIN2aIFQgX2UKQ
+
+{
+  "description": "상품 설명",
+  "id": 1,
+  "items": [
+    {
+      "count": 1,
+      "id": 1,
+      "name": "270",
+      "price": 100000
+    }
+  ],
+  "name": "나이키 에어포스 2",
+  "sellerId": 1
+}
