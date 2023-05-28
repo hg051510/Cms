@@ -33,11 +33,18 @@ public class ProductService {
         for(UpdateProductItemForm itemForm : form.getItems()){
             ProductItem item = product.getProductItems().stream()
                     .filter(pi->pi.getId().equals(itemForm.getId()))
-                    .findFirst().orElseThrow(()->new CustomException(ErrorCode.NOT_FOUNT_ITEM));
+                    .findFirst().orElseThrow(()->new CustomException(ErrorCode.NOT_FOUND_ITEM));
             item.setName(itemForm.getName());
             item.setPrice(itemForm.getPrice());
             item.setCount(itemForm.getCount());
         }
         return product;
+    }
+
+    @Transactional
+    public void deleteProduct(Long sellerId, Long productId){
+        Product product = productRepository.findBySellerIdAndId(sellerId, productId)
+                .orElseThrow(()->new CustomException(ErrorCode.NOT_FOUND_PRODUCT));
+        productRepository.delete(product);
     }
 }
