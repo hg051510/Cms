@@ -46,7 +46,7 @@ Content-Type: application/json
 {
   "birth": "1998-09-29",
   "email": "hg051510@naver.com",
-  "name": "김두현",
+  "name": "판매자2",
   "password": "1234",
   "phone": "01064008169"
 }
