@@ -28,7 +28,7 @@ public class Aes256Util {
 
     public static String decrypt(String cipherText){
         try{
-            Cipher cipher =Cipher.getInstance(alg);
+            Cipher cipher = Cipher.getInstance(alg);
             SecretKeySpec keySpec = new SecretKeySpec(KEY.getBytes(), "AES");
             IvParameterSpec ivParameterSpec = new IvParameterSpec(IV.getBytes(StandardCharsets.UTF_8));
             cipher.init(Cipher.DECRYPT_MODE, keySpec, ivParameterSpec);
